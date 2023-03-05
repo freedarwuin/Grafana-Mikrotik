@@ -18,7 +18,7 @@
 ### Deploy with bash script
 
 ```console
-curl -fsSL https://raw.githubusercontent.com/IgorKha/Grafana-Mikrotik/master/run.sh | bash -s -- --config
+curl -fsSL https://raw.githubusercontent.com/freedarwuin/Grafana-Mikrotik/master/run.sh | bash -s -- --config
 ```
 
 ```console
