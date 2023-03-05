@@ -13,9 +13,9 @@
 
 ---
 
-## 🐳 Deploy with docker-compose
+## 🐳 Implementar con docker-compose
 
-### Deploy with bash script
+### Implementar con bash script
 
 ```console
 curl -fsSL https://raw.githubusercontent.com/freedarwuin/Grafana-Mikrotik/master/run.sh | bash -s -- --config
