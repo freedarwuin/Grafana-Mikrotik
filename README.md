@@ -22,16 +22,16 @@ curl -fsSL https://raw.githubusercontent.com/freedarwuin/Grafana-Mikrotik/master
 ```
 
 ```console
-  You can also pass some arguments to script to set some these options:
+  También puede pasar algunos argumentos al script para establecer algunas de estas opciones:
 
-    --config: change the user and password to grafana and specify the mikrotik IP address
+    --config: cambie el usuario y la contraseña a grafana y especifique la dirección IP de mikrotik
 
-    --stop: stop docker containers
+    --stop: detener los contenedores docker
 
     --help
 ```
 
-For example:
+Por ejemplo:
 
 ```console
     bash run.sh --config
@@ -39,29 +39,29 @@ For example:
 
 [![asciicast](https://asciinema.org/a/nOhuc7LvI6bRWbg7dcvqFQ4Kc.png)](https://asciinema.org/a/nOhuc7LvI6bRWbg7dcvqFQ4Kc)
 
-### deploy with docker-compose manual
+### implementar con docker-compose manual
 
-1.Change targets ip (192.168.88.1) into file prometheus/prometheus.yml
+1.Cambie la IP de destino (192.168.88.1) al archivo prometheus/prometheus.yml
 
-2.Run
+2.Correr
 
 ```console
 docker-compose up -d
 ```
 
-3.Open [localhost:3000](http://localhost:3000)
+3.Abra [localhost:3000](http://localhost:3000)
 
-* Grafana login: `admin`
+* Inicio de sesión de Grafana: `admin`
 
-* Password: `mikrotik`
+* Contraseña: `mikrotik`
 
-If you want to change the credentials, then edit the ".env" file
+Si desea cambiar las credenciales, edite el archivo ".env"
 
 ---
 
-## Manual deploy
+## Despliegue manual
 
-1.add into prometheus.yml
+1.añadir en prometheus.yml
 
 ```yml
   - job_name: Mikrotik
@@ -80,13 +80,13 @@ If you want to change the credentials, then edit the ".env" file
         replacement: localhost:9116  # The SNMP exporter's real hostname:port.
 ```
 
-2.Configure Prometheus and run /snmp/snmp_exporter
+2.Configure Prometheus y ejecute /snmp/snmp_exporter
 
-3.Add dashboard <https://grafana.com/grafana/dashboards/14420>
+3.Agregar dashboard <https://grafana.com/grafana/dashboards/14420>
 
 ---
 
-### Docker snmp_exporter
+### Acoplador snmp_exportador
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mashinkopochinko/snmp_exporter_mikrotik?logo=docker)](https://hub.docker.com/repository/docker/mashinkopochinko/snmp_exporter_mikrotik)
 
