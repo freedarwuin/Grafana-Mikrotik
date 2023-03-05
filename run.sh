@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ############################################################################
-#   You can also pass some arguments to script to set some these options:
+#   También puede pasar algunos argumentos al script para establecer algunas de estas opciones:
 #   
-#       --config: change the user and password to grafana and specify the mikrotik IP address
-#       --stop: stop docker containers
+#       --config: cambie el usuario y la contraseña a grafana y especifique la dirección IP de mikrotik
+#       --stop: detener los contenedores docker
 #   
-#   For example:
+#   Por ejemplo:
 #       bash run.sh --config
 #   
 ############################################################################
@@ -44,18 +44,18 @@ ask() {
 
     while true; do
 
-        #? Ask the question (not using "read -p" as it uses stderr not stdout)
+        #? Haga la pregunta (sin usar "read -p" ya que usa stderr no stdout)
         echo -n "$1 [${prompt}] "
 
-        #? Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+        #? Lea la respuesta (use /dev/tty en caso de que stdin se redirija desde otro lugar)
         read -r reply </dev/tty
 
-        #? Default?
+        #? ¿Por defecto?
         if [[ -z ${reply} ]]; then
             reply=${default}
         fi
 
-        #? Check if the reply is valid
+        #? Comprobar si la respuesta es válida
         case "${reply}" in
         Y* | y*) return 0 ;;
         N* | n*) return 1 ;;
@@ -85,7 +85,7 @@ help() {
 clone_git() {
 
     echo -e "${BLUE}Git cloning ${REPO}...${RESET}"
-    git clone --depth=1 https://github.com/IgorKha/${REPO}.git ||
+    git clone --depth=1 https://github.com/freedarwuin/${REPO}.git ||
         {
             fmt_error "git clone of ${REPO} repo failed"
             exit 1
